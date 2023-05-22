@@ -24,6 +24,7 @@ public class Driver {
         // Create game controller in correct state
         GameController controller = new GameController(state);
         controller.runApplication(file);
+        // try loadin ght level here
 
     }
 

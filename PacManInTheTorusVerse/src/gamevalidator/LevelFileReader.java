@@ -40,6 +40,7 @@ public class LevelFileReader {
 
         // Save filename
         fileName = file.getName();
+        System.out.println("###DEBUG (line 43, LevelFileReader)### The file being read is: " + fileName);
 
         // Read all objects from xml file
         try {
