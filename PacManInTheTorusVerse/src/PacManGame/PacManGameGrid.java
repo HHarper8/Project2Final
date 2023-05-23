@@ -76,10 +76,11 @@ public class PacManGameGrid
 
 
         String[] location = locations[i].split(",");
+
         int x = Integer.parseInt(location[0]);
         int y = Integer.parseInt(location[1]);
         if (x < 0 || y < 0 || x >= nbHorzCells || y >= nbVertCells) {
-          System.out.println("###DEBUG (line 82, PacManGameGrid)### ("+x+","+y+") out of board.");
+
           continue;
           //out of the board
         }
@@ -89,7 +90,8 @@ public class PacManGameGrid
 
       }
       // now make the portal pairs have each other as attributes
-      System.out.println("###DEBUG (line 89, PacManGameGrid)### "+portalPair);
+      portalPair[0].setOtherPortal(portalPair[1]);
+      portalPair[1].setOtherPortal(portalPair[0]);
     }
 
 
@@ -115,8 +117,6 @@ public class PacManGameGrid
     if (name.equals("PacMan")) {
       actor = new PacActor();
       game.setPacActor((PacActor) actor);
-      //TODO: REMOVE THIS
-      System.out.println("###DEBUG### PAC ACTOR SET, line 119 PMGG");
     } else if (name.equals("Troll")) {
       actor = new Troll();
       game.getMonsters().add((Monster) actor);
@@ -153,7 +153,7 @@ public class PacManGameGrid
       game.addActor(actor, location);
     }
 
-    return null;
+    return actor;
   }
 
   /**
