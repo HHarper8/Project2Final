@@ -88,7 +88,6 @@ public class LevelLoader {
             output = output.substring(0,output.length()-1);
         }
 
-
         return output;
     }
 

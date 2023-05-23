@@ -69,7 +69,7 @@ public class LevelFileReader {
                     Node cellNode = cellNodes.item(n);
                     if (cellNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element cellElem = (Element) cellNode;
-                        System.out.println("###DEBUG (line 72, LFR)### tiles : " + cellElem.getTextContent() + ":  " + coord.toString());
+
                         if (cellElem.getTextContent().equals("PacTile")) {
                             pacLocations.add(coord);
                             System.out.println("###DEBUG (line 82, LFR)### PacTile coords: " + coord);
