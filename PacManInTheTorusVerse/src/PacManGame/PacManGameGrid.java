@@ -18,7 +18,7 @@ public class PacManGameGrid
   private Game game;
   private Properties properties;
 
-  private Version version;
+
 
 
 
@@ -35,7 +35,7 @@ public class PacManGameGrid
    */
   public void readAllActorsToGame() {
 
-    readgameversion();
+
     readActorsToGame("Wall");
     readActorsToGame("Pills");
     readActorsToGame("Gold");
@@ -65,7 +65,8 @@ public class PacManGameGrid
   private void readPortalPairToGame(String name) {
     Location actorLocation;
     String rawLocationString = getLocationString(name);
-    if (rawLocationString != null) {
+    if (rawLocationString != null && !rawLocationString.equals("")) {
+      System.out.println("###DEBUG (line 69, PacManGameGrid)### "+name+" is being added.");
       String[] locations = rawLocationString.split(";");
 
 
@@ -78,15 +79,17 @@ public class PacManGameGrid
         int x = Integer.parseInt(location[0]);
         int y = Integer.parseInt(location[1]);
         if (x < 0 || y < 0 || x >= nbHorzCells || y >= nbVertCells) {
+          System.out.println("###DEBUG (line 82, PacManGameGrid)### ("+x+","+y+") out of board.");
           continue;
           //out of the board
         }
         actorLocation = new Location(x, y);
+        System.out.println("###DEBUG (line 87, PacManGameGrid)### "+actorLocation+" is being added.");
         portalPair[i]=(Portal) spawnActor(name, actorLocation);
+
       }
       // now make the portal pairs have each other as attributes
-      portalPair[1].setOtherPortal(portalPair[0]);
-      portalPair[0].setOtherPortal(portalPair[1]);
+      System.out.println("###DEBUG (line 89, PacManGameGrid)### "+portalPair);
     }
 
 
@@ -112,6 +115,8 @@ public class PacManGameGrid
     if (name.equals("PacMan")) {
       actor = new PacActor();
       game.setPacActor((PacActor) actor);
+      //TODO: REMOVE THIS
+      System.out.println("###DEBUG### PAC ACTOR SET, line 119 PMGG");
     } else if (name.equals("Troll")) {
       actor = new Troll();
       game.getMonsters().add((Monster) actor);
@@ -174,18 +179,6 @@ public class PacManGameGrid
     return;
   }
 
-  private void readgameversion(){
-    String str = properties.getProperty("version");
-    if(str.equals("simple")) {
-      this.version = Version.SIMPLE;
-    }else {
-      this.version = Version.MULTIVERSE;
-    }
-  }
 
-
-  public Version getVersion() {
-    return version;
-  }
 
 }

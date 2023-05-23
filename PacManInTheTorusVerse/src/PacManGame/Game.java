@@ -58,7 +58,7 @@ public class Game extends GameGrid
     drawGrid(background);
 
     //Setup Random seeds
-    seed = Integer.parseInt(properties.getProperty("seed"));
+
     pacActor.setSeed(seed);
     pacActor.setSlowDown(3);
 

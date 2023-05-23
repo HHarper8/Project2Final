@@ -1,2 +1,0 @@
-Level portal_test.xml - Pill not accessible: java.awt.Point[x=6,y=221];java.awt.Point[x=7,y=256];java.awt.Point[x=7,y=258];java.awt.Point[x=7,y=260];java.awt.Point[x=7,y=262];java.awt.Point[x=8,y=303];java.awt.Point[x=9,y=344];
-Level portal_test.xml - Gold not accessible: java.awt.Point[x=5,y=184];

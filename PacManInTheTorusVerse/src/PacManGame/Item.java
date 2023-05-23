@@ -29,9 +29,6 @@ public class Item extends GameActor {
      */
     protected void beConsumed() {
         getGame().increaseScore(this.scoreValue);
-        if(getGame().getGrid().getVersion() == Version.MULTIVERSE) {
-            affectMonsters();
-        }
         removeSelf();
     }
 

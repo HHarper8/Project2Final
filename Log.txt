@@ -1,0 +1,88 @@
+[PacMan] Location: 10-7. Score: 0. Pills: 0
+[Troll] Location: 19-8
+[PacMan] Location: 10-7. Score: 0. Pills: 0
+[Troll] Location: 19-7
+[PacMan] Location: 10-7. Score: 0. Pills: 0
+[Troll] Location: 18-7
+[PacMan] Location: 5-5. Eat Pill/Item: gold
+[PacMan] Location: 10-4. Score: 5. Pills: 1
+[Troll] Location: 17-7
+[PacMan] Location: 10-4. Score: 5. Pills: 1
+[Troll] Location: 16-7
+[PacMan] Location: 10-2. Score: 5. Pills: 1
+[Troll] Location: 16-6
+[PacMan] Location: 8-2. Score: 5. Pills: 1
+[Troll] Location: 16-5
+[PacMan] Location: 6-3. Score: 5. Pills: 1
+[Troll] Location: 15-5
+[PacMan] Location: 6-5. Score: 5. Pills: 1
+[Troll] Location: 14-5
+[PacMan] Location: 6-5. Score: 5. Pills: 1
+[Troll] Location: 14-4
+[PacMan] Location: 9-5. Score: 5. Pills: 1
+[Troll] Location: 14-3
+[PacMan] Location: 9-5. Score: 5. Pills: 1
+[Troll] Location: 14-2
+[PacMan] Location: 10-6. Score: 5. Pills: 1
+[Troll] Location: 13-2
+[PacMan] Location: 10-9. Score: 5. Pills: 1
+[Troll] Location: 12-2
+[PacMan] Location: 10-9. Score: 5. Pills: 1
+[Troll] Location: 11-2
+[PacMan] Location: 10-9. Score: 5. Pills: 1
+[Troll] Location: 10-2
+[TX5] Location: 3-2
+[PacMan] Location: 11-10. Score: 5. Pills: 1
+[Troll] Location: 9-2
+[TX5] Location: 4-2
+[PacMan] Location: 14-10. Score: 5. Pills: 1
+[Troll] Location: 8-2
+[TX5] Location: 5-2
+[PacMan] Location: 16-10. Score: 5. Pills: 1
+[Troll] Location: 7-2
+[TX5] Location: 6-2
+[PacMan] Location: 18-10. Score: 5. Pills: 1
+[Troll] Location: 6-2
+[TX5] Location: 7-2
+[PacMan] Location: 19-9. Score: 5. Pills: 1
+[Troll] Location: 5-2
+[TX5] Location: 8-2
+[PacMan] Location: 18-7. Score: 5. Pills: 1
+[Troll] Location: 4-2
+[TX5] Location: 9-2
+[PacMan] Location: 16-7. Score: 5. Pills: 1
+[Troll] Location: 3-2
+[TX5] Location: 10-2
+[PacMan] Location: 14-7. Score: 5. Pills: 1
+[Troll] Location: 2-2
+[TX5] Location: 10-3
+[PacMan] Location: 12-7. Score: 5. Pills: 1
+[Troll] Location: 2-3
+[TX5] Location: 10-4
+[PacMan] Location: 10-7. Score: 5. Pills: 1
+[Troll] Location: 2-4
+[PacMan] Location: 7-7. Eat Pill/Item: pills
+[TX5] Location: 10-5
+[PacMan] Location: 8-7. Score: 6. Pills: 2
+[Troll] Location: 2-5
+[PacMan] Location: 7-7. Eat Pill/Item: pills
+[PacMan] Location: 7-7. Eat Pill/Item: pills
+[TX5] Location: 9-5
+[PacMan] Location: 6-7. Score: 8. Pills: 4
+[Troll] Location: 2-6
+[PacMan] Location: 7-7. Eat Pill/Item: pills
+[TX5] Location: 8-5
+[PacMan] Location: 6-7. Score: 9. Pills: 5
+[Troll] Location: 2-7
+[TX5] Location: 8-6
+[PacMan] Location: 6-7. Score: 9. Pills: 5
+[Troll] Location: 2-8
+[TX5] Location: 8-7
+[PacMan] Location: 6-7. Score: 9. Pills: 5
+[Troll] Location: 2-9
+[TX5] Location: 7-7
+[PacMan] Location: 6-7. Score: 9. Pills: 5
+[Troll] Location: 2-10
+[TX5] Location: 6-7
+[PacMan] Location: 6-7. Score: 9. Pills: 5
+[Troll] Location: 3-10

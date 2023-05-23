@@ -59,13 +59,14 @@ public class LevelLoader {
 
         levelProperties.setProperty("game.width", Integer.toString(level.getGameWidth()));
         levelProperties.setProperty("game.height", Integer.toString(level.getGameHeight()));
-
-        levelProperties.setProperty("pacman.location", locationToProperties(level.getPacLocations()));
+        // TODO: renamed pacman to PACMAN, just notify group
+        levelProperties.setProperty("PacMan.location", locationToProperties(level.getPacLocations()));
         levelProperties.setProperty("TX5.location", locationToProperties(level.getTX5Locations()));
         levelProperties.setProperty("Troll.location", locationToProperties(level.getTrollLocations()));
         levelProperties.setProperty("Pills.location", locationToProperties(level.getPillLocations()));
         levelProperties.setProperty("Gold.location", locationToProperties(level.getGoldLocations()));
-        levelProperties.setProperty("Walls.location", locationToProperties(level.getWallLocations()));
+        // TODO: renamed Walls to Wall, just notify group
+        levelProperties.setProperty("Wall.location", locationToProperties(level.getWallLocations()));
         levelProperties.setProperty("Paths.location", locationToProperties(level.getPathLocations()));
 
         levelProperties.setProperty("WhitePortal.location", locationToProperties(level.getPortalWhiteLocations()));
@@ -80,7 +81,9 @@ public class LevelLoader {
 
         String output = "";
         for (Point point: locations) {
-            output = output + point.x + "," + point.y + ";";
+            // x and y are being swapped such that PacManGameGrid works
+            // TODO: CONFIRM WITH GROUP
+            output = output +  point.y + "," + point.x + ";";
         }
 
         // Remove trailing ';'
