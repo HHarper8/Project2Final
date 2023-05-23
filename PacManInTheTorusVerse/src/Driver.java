@@ -1,7 +1,9 @@
 package src;
 import src.PacApp.GameController;
-
+import src.gamevalidator.LevelLoader;
+import src.PacApp.utilities.GameCallback;
 import java.io.File;
+import java.util.Properties;
 
 public class Driver {
 
@@ -24,7 +26,18 @@ public class Driver {
         // Create game controller in correct state
         GameController controller = new GameController(state);
         controller.runApplication(file);
-        // try loadin ght level here
+        // now using the properties stored by the LevelLoader
+        Properties levelProps = LevelLoader.getInstance().getNextLevel();
+
+        // check if there exists a level
+        if (levelProps != null && !levelProps.isEmpty()) {
+            // now load this property into the PacMan game
+            GameCallback gameCallback = new GameCallback();
+            new Game(gameCallback, properties);
+
+        }
+
+
 
     }
 

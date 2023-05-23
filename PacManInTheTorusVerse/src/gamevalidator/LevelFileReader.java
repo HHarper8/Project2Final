@@ -79,6 +79,7 @@ public class LevelFileReader {
                         Point coord = new Point(row, col);
                         if (tile.getTextContent().equals("PacTile")) {
                             pacLocations.add(coord);
+                            System.out.println("###DEBUG (line 82, LFR)### PacTile coords: " + coord);
                         }
                         else if (tile.getTextContent().equals("PathTile")) {
                             pathLocations.add(coord);
