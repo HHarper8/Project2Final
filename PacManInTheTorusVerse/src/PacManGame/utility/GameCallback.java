@@ -1,7 +1,8 @@
-package src.utility;
+package src.PacManGame.utility;
 
 import ch.aplu.jgamegrid.Location;
-import src.Monster;
+import src.PacManGame.Monster;
+
 
 import java.io.File;
 import java.io.FileWriter;

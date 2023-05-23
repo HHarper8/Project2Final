@@ -87,6 +87,11 @@ public class LevelLoader {
     }
 
     public Properties getNextLevel() {
+        if (allLevels == null) {
+            System.out.println("###DEBUG (line91, Game)### allLevels is null");
+            return null;
+        }
+
 
         if (allLevels.isEmpty()) {
             return null;

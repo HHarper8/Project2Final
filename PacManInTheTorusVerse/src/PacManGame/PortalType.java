@@ -1,4 +1,4 @@
-package src;
+package src.PacManGame;
 
 public enum PortalType {
     WHITE,

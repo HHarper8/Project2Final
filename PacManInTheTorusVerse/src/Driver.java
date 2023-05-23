@@ -1,7 +1,11 @@
 package src;
 import src.PacApp.GameController;
+import src.PacManGame.utility.GameCallback;
 import src.gamevalidator.LevelLoader;
-import src.PacApp.utilities.GameCallback;
+import src.PacManGame.Game;
+
+
+
 import java.io.File;
 import java.util.Properties;
 
@@ -33,7 +37,7 @@ public class Driver {
         if (levelProps != null && !levelProps.isEmpty()) {
             // now load this property into the PacMan game
             GameCallback gameCallback = new GameCallback();
-            new Game(gameCallback, properties);
+            new Game(gameCallback, levelProps);
 
         }
 

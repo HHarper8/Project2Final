@@ -1,9 +1,10 @@
 // PacMan.java
 // Simple PacMan implementation
-package src;
+package src.PacManGame;
 
 import ch.aplu.jgamegrid.*;
-import src.utility.GameCallback;
+import src.PacManGame.utility.GameCallback;
+
 
 import java.awt.*;
 import java.util.ArrayList;

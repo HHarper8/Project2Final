@@ -1,4 +1,4 @@
-package src;
+package src.PacManGame;
 
 import java.util.Properties;
 

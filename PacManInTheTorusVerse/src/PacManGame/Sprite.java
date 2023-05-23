@@ -1,4 +1,4 @@
-package src;
+package src.PacManGame;
 
 
 //958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
