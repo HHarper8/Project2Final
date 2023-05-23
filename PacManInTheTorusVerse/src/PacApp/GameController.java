@@ -31,6 +31,7 @@ public class GameController {
                     editor = new Controller();
                     editor.loadOneFile(file);
                 }
+                break;
 
             case Test:
 
@@ -39,6 +40,7 @@ public class GameController {
                     File errorFile = gameDriver.runGame(file);
 
                 }
+                break;
 
         }
 
