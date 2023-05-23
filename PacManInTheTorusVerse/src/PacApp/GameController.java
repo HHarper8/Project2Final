@@ -37,6 +37,7 @@ public class GameController {
                 if (gameDriver == null) {
                     gameDriver = new GameDriver();
                     File errorFile = gameDriver.runGame(file);
+
                 }
 
         }
