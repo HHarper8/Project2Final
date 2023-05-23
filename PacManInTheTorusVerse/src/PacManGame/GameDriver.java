@@ -18,10 +18,10 @@ public class GameDriver {
 
 
         //
-        //if (errorFile != null) {
-            //System.out.println("###DEBUG (line 20, GameDriver)### errorFile exists");
-            //return errorFile;
-        //}
+        if (errorFile != null) {
+            System.out.println("###DEBUG (line 20, GameDriver)### errorFile exists");
+            return errorFile;
+        }
 
         // Iterate through all maps, running game
         Properties currLevel = loader.getNextLevel();
