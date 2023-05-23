@@ -2,6 +2,7 @@ package src.gamevalidator;
 
 import java.awt.*;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -9,7 +10,7 @@ import java.util.Properties;
 public class LevelLoader {
 
     private static LevelLoader instance = null;
-    private List<Properties> allLevels;
+    private List<Properties> allLevels = new ArrayList<>();
     private int numLevels = 0;
 
     private LevelLoader() {}
@@ -37,10 +38,12 @@ public class LevelLoader {
 
         for (File level: levels) {
             if (!levelChecker.checkValidity(level)) {
+                System.out.println("###DEBUG (line 41, LevelLoader)### level not valid");
                 return level;
             }
             else {
                 Properties levelProperties = createProperties(level);
+                System.out.println("###DEBUG (line 45, LevelLoader)### adding a level");
                 allLevels.add(numLevels, levelProperties);
                 numLevels++;
             }
@@ -88,12 +91,13 @@ public class LevelLoader {
 
     public Properties getNextLevel() {
         if (allLevels == null) {
-            System.out.println("###DEBUG (line91, Game)### allLevels is null");
+            System.out.println("###DEBUG (line 91, LevelLoader)### allLevels is null");
             return null;
         }
 
 
         if (allLevels.isEmpty()) {
+            System.out.println("###DEBUG (line 97, LevelLoader)### allLevels is empty");
             return null;
         }
         Properties currLevel = allLevels.remove(0);

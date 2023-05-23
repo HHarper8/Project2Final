@@ -1,5 +1,6 @@
 package src.PacManGame;
 
+import src.PacManGame.utility.GameCallback;
 import src.gamevalidator.LevelFileReader;
 import src.gamevalidator.LevelLoader;
 
@@ -15,17 +16,25 @@ public class GameDriver {
         LevelLoader loader = LevelLoader.getInstance();
         File errorFile = loader.loadLevels(file);
 
-        if (errorFile != null) {
-            return errorFile;
-        }
+
+        //
+        //if (errorFile != null) {
+            //System.out.println("###DEBUG (line 20, GameDriver)### errorFile exists");
+            //return errorFile;
+        //}
 
         // Iterate through all maps, running game
         Properties currLevel = loader.getNextLevel();
+
         while (currLevel != null) {
             // Call Game with currLevel
-            String fillerVariable = "call game here";
+            GameCallback gameCallback = new GameCallback();
+            System.out.println("###DEBUG (line28, GameDriver)### MAKING A NEW GAME");
+            new Game(gameCallback, currLevel);
             currLevel = loader.getNextLevel();
         }
+
+
 
         return null;
 

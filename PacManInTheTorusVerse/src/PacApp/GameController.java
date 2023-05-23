@@ -29,6 +29,7 @@ public class GameController {
             case Edit:
                 if (editor == null) {
                     editor = new Controller();
+                    editor.loadOneFile(file);
                 }
 
             case Test:
