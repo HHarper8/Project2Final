@@ -84,7 +84,10 @@ public class LevelLoader {
         }
 
         // Remove trailing ';'
-        output = output.substring(0,output.length()-1);
+        if (output.length() > 0) {
+            output = output.substring(0,output.length()-1);
+        }
+
 
         return output;
     }
