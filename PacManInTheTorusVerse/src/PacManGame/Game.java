@@ -1,5 +1,6 @@
 // PacMan.java
 // Simple PacMan implementation
+
 package src.PacManGame;
 
 import ch.aplu.jgamegrid.*;

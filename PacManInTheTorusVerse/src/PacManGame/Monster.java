@@ -1,6 +1,8 @@
 // Monster.java
 // Used for PacMan
+
 package src.PacManGame;
+
 
 
 import ch.aplu.jgamegrid.*;
@@ -9,7 +11,10 @@ import java.util.*;
 //958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
 //1270676 Aryan Puri (aryanp@student.unimelb.edu.au)
 //1272792 Henry Harper (hsharper@student.unimelb.edu.au)
-public abstract class Monster extends GameActor {
+
+
+public class Monster extends GameActor {
+
   private ArrayList<Location> visitedList = new ArrayList<Location>();
   private final int listLength = 10;
   private boolean stopMoving = false;
@@ -72,7 +77,9 @@ public abstract class Monster extends GameActor {
       setHorzMirror(true);
   }
 
-  public abstract void walkApproach();
+
+  public void walkApproach() {return;}
+
 
   public String getType() {
     return getCurrentName();

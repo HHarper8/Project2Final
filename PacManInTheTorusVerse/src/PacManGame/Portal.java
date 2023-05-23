@@ -1,4 +1,6 @@
+
 package src.PacManGame;
+
 
 public class Portal extends Obstacle {
     private PortalType portalType;

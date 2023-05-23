@@ -1,5 +1,7 @@
 // PacGrid.java
+
 package src.PacManGame;
+
 
 import ch.aplu.jgamegrid.*;
 import java.util.Properties;

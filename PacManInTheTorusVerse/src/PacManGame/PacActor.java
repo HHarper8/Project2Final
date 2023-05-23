@@ -1,5 +1,6 @@
 // PacActor.java
 // Used for PacMan
+
 package src.PacManGame;
 
 import ch.aplu.jgamegrid.*;

@@ -1,4 +1,6 @@
+
 package src.PacManGame;
+
 
 import ch.aplu.jgamegrid.Location;
 
@@ -67,7 +69,6 @@ public class TX5 extends Monster {
         addVisitedList(next);
 
     }
-
 
 
 }

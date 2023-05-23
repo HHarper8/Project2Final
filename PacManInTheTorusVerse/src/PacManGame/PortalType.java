@@ -1,3 +1,4 @@
+
 package src.PacManGame;
 
 public enum PortalType {

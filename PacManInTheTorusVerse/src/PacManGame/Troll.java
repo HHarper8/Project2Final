@@ -1,4 +1,8 @@
+
 package src.PacManGame;
+
+
+
 import ch.aplu.jgamegrid.*;
 
 //958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
@@ -58,6 +62,7 @@ public class Troll extends Monster {
         addVisitedList(next);
 
     }
+
 
 
 
