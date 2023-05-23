@@ -83,7 +83,9 @@ public class LevelLoader {
         for (Point point: locations) {
             // x and y are being swapped such that PacManGameGrid works
             // TODO: CONFIRM WITH GROUP
-            output = output +  point.y + "," + point.x + ";";
+            int new_x = point.y-1;
+            int new_y = point.x-1;
+            output = output +  new_x + "," + new_y + ";";
         }
 
         // Remove trailing ';'
