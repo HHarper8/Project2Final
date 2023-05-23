@@ -75,6 +75,10 @@ public class View {
 		loadButton.addActionListener(controller);
 		loadButton.setActionCommand("load");
 
+		JButton editButton = new JButton("Test Game");
+		editButton.addActionListener(controller);
+		loadButton.setActionCommand("test");
+
 		JPanel right = new JPanel();
 		right.setLayout(new BoxLayout(right, BoxLayout.Y_AXIS));
 		Border border = BorderFactory.createEmptyBorder(10, 10, 10, 10);

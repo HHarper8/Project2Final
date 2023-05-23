@@ -48,76 +48,71 @@ public class LevelFileReader {
             DocumentBuilder builder = dbf.newDocumentBuilder();
             Document doc = builder.parse(file);
 
-            // get root element
-            Element root = doc.getDocumentElement();
-
             // Initialise board coordinate counters
             int row = 1;
             int col = 1;
 
-            NodeList nodeList = root.getChildNodes();
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
+            // get size
+            NodeList sizes = doc.getElementsByTagName("size");
+            Node sizeNode = sizes.item(0);
+            Element size = (Element) sizeNode;
+            gameWidth = Integer.parseInt(size.getElementsByTagName("width").item(0).getTextContent());
+            gameHeight = Integer.parseInt(size.getElementsByTagName("height").item(0).getTextContent());
 
-                if (node.getNodeName().equals("size")) {
-                    NodeList dimensions = node.getChildNodes();
-                    for (int j = 0; j < dimensions.getLength(); j++) {
-                        Node child = dimensions.item(j);
-                        if (child.getNodeName().equals("width")) {
-                            gameWidth = Integer.parseInt(child.getTextContent());
-                        }
-                        else if (child.getNodeName().equals("height")) {
-                            gameHeight = Integer.parseInt(child.getTextContent());
-                        }
-                    }
-                }
+            // get rows
+            NodeList rows = doc.getElementsByTagName("row");
 
-                else if (node.getNodeName().equals("row")) {
-                    NodeList tiles = node.getChildNodes();
-                    for (int j = 0; j < tiles.getLength(); j++) {
-                        Node tile = tiles.item(j);
-                        Point coord = new Point(row, col);
-                        if (tile.getTextContent().equals("PacTile")) {
+            for (int m = 0; m < rows.getLength(); m++) {
+                NodeList cellNodes = rows.item(m).getChildNodes();
+                for (int n = 0; n < cellNodes.getLength(); n++) {
+                    Point coord = new Point(row, col);
+                    Node cellNode = cellNodes.item(n);
+                    if (cellNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element cellElem = (Element) cellNode;
+                        System.out.println("###DEBUG (line 72, LFR)### tiles : " + cellElem.getTextContent() + ":  " + coord.toString());
+                        if (cellElem.getTextContent().equals("PacTile")) {
                             pacLocations.add(coord);
                             System.out.println("###DEBUG (line 82, LFR)### PacTile coords: " + coord);
                         }
-                        else if (tile.getTextContent().equals("PathTile")) {
+                        else if (cellElem.getTextContent().equals("PathTile")) {
                             pathLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("WallTile")) {
+                        else if (cellElem.getTextContent().equals("WallTile")) {
                             wallLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("PillTile")) {
+                        else if (cellElem.getTextContent().equals("PillTile")) {
                             pillLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("GoldTile")) {
+                        else if (cellElem.getTextContent().equals("GoldTile")) {
                             goldLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("IceTile")) {
+                        else if (cellElem.getTextContent().equals("IceTile")) {
                             iceLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("PortalWhiteTile")) {
+                        else if (cellElem.getTextContent().equals("PortalWhiteTile")) {
                             portalWhiteLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("PortalYellowTile")) {
+                        else if (cellElem.getTextContent().equals("PortalYellowTile")) {
                             portalYellowLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("PortalDarkGrayTile")) {
+                        else if (cellElem.getTextContent().equals("PortalDarkGrayTile")) {
                             portalDarkGrayLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("PortalDarkGoldTile")) {
+                        else if (cellElem.getTextContent().equals("PortalDarkGoldTile")) {
                             portalDarkGoldLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("TrollTile")) {
+                        else if (cellElem.getTextContent().equals("TrollTile")) {
                             trollLocations.add(coord);
                         }
-                        else if (tile.getTextContent().equals("TX5Tile")) {
+                        else if (cellElem.getTextContent().equals("TX5Tile")) {
                             TX5Locations.add(coord);
                         }
                         col++;
                     }
-                    row++;
                 }
+                row++;
+                col = 1;
+
             }
 
         } catch (Exception e) {
