@@ -39,7 +39,7 @@ public class GameController {
                     gameDriver = new GameDriver();
                     File errorFile = gameDriver.runGame(file);
                     editor = new Controller();
-                    editor.loadOneFile(file);
+                    editor.loadOneFile(errorFile);
 
                 }
                 break;

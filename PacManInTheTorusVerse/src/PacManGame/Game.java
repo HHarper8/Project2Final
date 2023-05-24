@@ -11,6 +11,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
+
+
 //958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
 //1270676 Aryan Puri (aryanp@student.unimelb.edu.au)
 //1272792 Henry Harper (hsharper@student.unimelb.edu.au)
@@ -29,6 +31,7 @@ public class Game extends GameGrid
   private GameCallback gameCallback;
   private Properties properties;
   private int seed = 30006;
+  private boolean gameWinOutcome= false;
 
   // score
   private int score = 0;
@@ -116,20 +119,24 @@ public class Game extends GameGrid
     for(Monster monster : Monsters){
       monster.setStopMoving(true);
     }
-    pacActor.removeSelf();
+
     String title = "";
     if (hasPacmanBeenHit) {
       background.setPaintColor(Color.red);
       title = "GAME OVER";
       addActor(new Actor("sprites/explosion3.gif"), loc);
+      gameWinOutcome = false;
     } else if (hasPacmanEatAllPills) {
       background.setPaintColor(Color.yellow);
       title = "YOU WIN";
+      gameWinOutcome = true;
     }
     setTitle(title);
     gameCallback.endOfGame(title);
-
+    stopGameThread();
     doPause();
+
+
   }
 
   /**
@@ -257,6 +264,10 @@ public class Game extends GameGrid
 
   public GameActorFactory getGrid() {
     return grid;
+  }
+
+  public boolean isGameWon() {
+    return gameWinOutcome;
   }
 }
 

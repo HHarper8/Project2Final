@@ -158,6 +158,8 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
       } else {
         setDirection(oldDirection);
         next = getNextMoveLocation();
+
+
         if (canMove(next)) // Try to move forward
         {
           setLocation(next);

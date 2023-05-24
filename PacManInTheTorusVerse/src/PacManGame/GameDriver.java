@@ -17,21 +17,32 @@ public class GameDriver {
         File errorFile = loader.loadLevels(file);
 
 
-        // THIS IMMED
-        if (errorFile != null) {
-            System.out.println("###DEBUG (line 20, GameDriver)### errorFile exists");
-            return errorFile;
-        }
+
 
         // Iterate through all maps, running game
         Properties currLevel = loader.getNextLevel();
-
+        int levelCounter = 0;
         while (currLevel != null) {
+
+
             // Call Game with currLevel
+
+
             GameCallback gameCallback = new GameCallback();
-            System.out.println("###DEBUG (line28, GameDriver)### MAKING A NEW GAME");
-            new Game(gameCallback, currLevel);
+
+
+            Game game = new Game(gameCallback, currLevel);
+            if (!game.isGameWon())  {
+                return errorFile;
+            }
             currLevel = loader.getNextLevel();
+            levelCounter++;
+            if (levelCounter >= loader.getFirstInvalidLevel()) {
+                if (errorFile != null) {
+                    return errorFile;
+                }
+
+            }
         }
 
 

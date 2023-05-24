@@ -12,6 +12,8 @@ public class LevelLoader {
     private static LevelLoader instance = null;
     private List<Properties> allLevels = new ArrayList<>();
     private int numLevels = 0;
+    private int firstInvalidLevel = 0;
+    private boolean foundFirstInvalidLevel = false;
 
     private LevelLoader() {}
 
@@ -38,7 +40,9 @@ public class LevelLoader {
 
         for (File level: levels) {
             if (!levelChecker.checkValidity(level)) {
+                foundFirstInvalidLevel = true;
                 System.out.println("###DEBUG (line 41, LevelLoader)### level not valid");
+
                 return level;
             }
             else {
@@ -46,10 +50,18 @@ public class LevelLoader {
                 System.out.println("###DEBUG (line 45, LevelLoader)### adding a level");
                 allLevels.add(numLevels, levelProperties);
                 numLevels++;
+                if (!foundFirstInvalidLevel) {
+                    firstInvalidLevel++;
+                }
+
             }
         }
 
         return null;
+    }
+
+    public int getFirstInvalidLevel() {
+        return firstInvalidLevel;
     }
 
     private Properties createProperties(File levelFile) {
@@ -99,13 +111,13 @@ public class LevelLoader {
 
     public Properties getNextLevel() {
         if (allLevels == null) {
-            System.out.println("###DEBUG (line 91, LevelLoader)### allLevels is null");
+
             return null;
         }
 
 
         if (allLevels.isEmpty()) {
-            System.out.println("###DEBUG (line 97, LevelLoader)### allLevels is empty");
+
             return null;
         }
         Properties currLevel = allLevels.remove(0);
