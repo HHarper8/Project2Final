@@ -16,6 +16,9 @@ public class GameDriver {
         LevelLoader loader = LevelLoader.getInstance();
         File errorFile = loader.loadLevels(file);
 
+        if (errorFile != null) {
+            return errorFile;
+        }
 
 
 
@@ -32,17 +35,8 @@ public class GameDriver {
 
 
             Game game = new Game(gameCallback, currLevel);
-            if (!game.isGameWon())  {
-                return errorFile;
-            }
             currLevel = loader.getNextLevel();
             levelCounter++;
-            if (levelCounter >= loader.getFirstInvalidLevel()) {
-                if (errorFile != null) {
-                    return errorFile;
-                }
-
-            }
         }
 
 
