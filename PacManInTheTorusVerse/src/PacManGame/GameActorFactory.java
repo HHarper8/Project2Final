@@ -25,19 +25,12 @@ public class GameActorFactory
   public GameActorFactory(Game game, Properties properties) {
     this.game = game;
     this.properties = properties;
-    readGameDimensions();
+    this.nbVertCells = Game.getNbVCells();
+    this.nbHorzCells = Game.getNbHCells();
 
   }
 
-  /**
-   * reads in the the height and width of the game grid from properties
-   */
-  private void readGameDimensions(){
-    this.nbHorzCells = Integer.parseInt(properties.getProperty("game.width"));
-    this.nbVertCells = Integer.parseInt(properties.getProperty("game.width"));
 
-    return;
-  }
   /**
    * Reads in all actors to the game
    */

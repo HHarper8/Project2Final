@@ -16,8 +16,8 @@ import java.util.Properties;
 //1272792 Henry Harper (hsharper@student.unimelb.edu.au)
 public class Game extends GameGrid
 {
-  private final static int nbHorzCells = 20;
-  private final static int nbVertCells = 11;
+  private static int nbHorzCells = 20;
+  private static int nbVertCells = 11;
 
   protected GameActorFactory grid;
 
@@ -38,6 +38,16 @@ public class Game extends GameGrid
   // background
   private GGBackground background = getBg();
 
+
+  public static int getNbHCells() {
+    return nbHorzCells;
+  }
+
+
+  public static int getNbVCells() {
+    return nbVertCells;
+  }
+
   public Game(GameCallback gameCallback, Properties properties)
   {
     //Setup game
@@ -46,6 +56,13 @@ public class Game extends GameGrid
     this.properties = properties;
     setSimulationPeriod(100);
     setTitle("[PacMan in the Multiverse]");
+
+
+    nbHorzCells = Integer.parseInt(properties.getProperty("game.width"));
+    nbVertCells = Integer.parseInt(properties.getProperty("game.height"));
+
+
+
 
     // create the LevelLoader
     grid = new GameActorFactory(this,  this.properties);
@@ -216,6 +233,9 @@ public class Game extends GameGrid
 
   public int getNumHorzCells () { return this.nbHorzCells; }
   public int getNumVertCells () { return this.nbVertCells; }
+
+
+
 
   public int getScore() { return this.score; }
   public ArrayList<Monster> getMonsters() {
