@@ -82,6 +82,7 @@ public class LevelLoader {
         String output = "";
         for (Point point: locations) {
             // x and y are being swapped such that PacManGameGrid works
+
             // TODO: CONFIRM WITH GROUP
             int new_x = point.x-1;
             int new_y = point.y-1;

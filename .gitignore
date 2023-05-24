@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+<<<<<<< HEAD
+=======
+# Text files
+>>>>>>> 153b1e479f8a0e8fbb9a967cc026566002edf97c
 *.txt
 
 # BlueJ files
