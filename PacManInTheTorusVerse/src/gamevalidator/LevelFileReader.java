@@ -65,7 +65,7 @@ public class LevelFileReader {
             for (int m = 0; m < rows.getLength(); m++) {
                 NodeList cellNodes = rows.item(m).getChildNodes();
                 for (int n = 0; n < cellNodes.getLength(); n++) {
-                    Point coord = new Point(row, col);
+                    Point coord = new Point(col, row);
                     Node cellNode = cellNodes.item(n);
                     if (cellNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element cellElem = (Element) cellNode;

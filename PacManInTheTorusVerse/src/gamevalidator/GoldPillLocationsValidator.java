@@ -27,7 +27,6 @@ public class GoldPillLocationsValidator extends Check {
         List<Point> goldLocations = level.getGoldLocations();
 
         // Start at pacman location
-        System.out.println("###DEBUG (line 30, GPLValidator)### paclocation is: "+ pacLocations);
         Point spawn = pacLocations.get(0);
 
         // Push 4 adjacent moves on to stack if not a wall or portal
