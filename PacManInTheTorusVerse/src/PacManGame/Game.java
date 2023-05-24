@@ -19,7 +19,7 @@ public class Game extends GameGrid
   private final static int nbHorzCells = 20;
   private final static int nbVertCells = 11;
 
-  protected PacManGameGrid grid;
+  protected GameActorFactory grid;
 
   // References to monsters and pacActor
   protected PacActor pacActor;
@@ -48,7 +48,7 @@ public class Game extends GameGrid
     setTitle("[PacMan in the Multiverse]");
 
     // create the LevelLoader
-    grid = new PacManGameGrid(this,  this.properties);
+    grid = new GameActorFactory(this,  this.properties);
     grid.readAllActorsToGame();
 
     //Setup for auto test
@@ -235,7 +235,7 @@ public class Game extends GameGrid
     }
   }
 
-  public PacManGameGrid getGrid() {
+  public GameActorFactory getGrid() {
     return grid;
   }
 }
