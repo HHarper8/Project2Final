@@ -30,6 +30,7 @@ public class Gold extends Item{
     public void beConsumed() {
         getGame().increaseNumberGoalItemsConsumed();
         super.beConsumed();
+        count--;
     }
 
 }

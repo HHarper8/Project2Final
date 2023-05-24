@@ -28,6 +28,7 @@ public class Pill extends Item {
     public void beConsumed() {
         getGame().increaseNumberGoalItemsConsumed();
         super.beConsumed();
+        count--;
     }
 
 }

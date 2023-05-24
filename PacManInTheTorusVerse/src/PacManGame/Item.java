@@ -30,6 +30,7 @@ public class Item extends GameActor {
     protected void beConsumed() {
         getGame().increaseScore(this.scoreValue);
         removeSelf();
+        count--;
     }
 
     /**
