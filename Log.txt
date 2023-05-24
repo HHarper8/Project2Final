@@ -1,22 +1,41 @@
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 16-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-9
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 14-9
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 14-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-9
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 14-9
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 14-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-8
-[PacMan] Location: 2-8. Score: 0. Pills: 0
-[Troll] Location: 15-9
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 18-7
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 18-6
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 17-6
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 16-6
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 15-6
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 15-5
+[PacMan] Location: 9-6. Score: 0. Pills: 0
+[Troll] Location: 15-4
+[PacMan] Location: 10-6. Score: 0. Pills: 0
+[Troll] Location: 14-4
+[PacMan] Location: 5-3. Score: 0. Pills: 0
+[Troll] Location: 13-4
+[PacMan] Location: 5-3. Score: 0. Pills: 0
+[Troll] Location: 13-3
+[PacMan] Location: 4-3. Score: 0. Pills: 0
+[Troll] Location: 13-2
+[PacMan] Location: 11-6. Score: 0. Pills: 0
+[Troll] Location: 13-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 12-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 11-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 10-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 9-1
+[TX5] Location: 2-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 8-1
+[TX5] Location: 3-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 7-1
+[TX5] Location: 4-1
+[PacMan] Location: 13-6. Score: 0. Pills: 0
+[Troll] Location: 6-1
