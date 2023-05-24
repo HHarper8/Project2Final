@@ -58,8 +58,10 @@ public class Troll extends Monster {
                 }
             }
         }
+        handlePortalCollision(next);
         getGame().getGameCallback().monsterLocationChanged(this);
         addVisitedList(next);
+
 
     }
 

@@ -64,7 +64,7 @@ public class TX5 extends Monster {
                 }
             }
         }
-
+        handlePortalCollision(next);
         getGame().getGameCallback().monsterLocationChanged(this);
         addVisitedList(next);
 

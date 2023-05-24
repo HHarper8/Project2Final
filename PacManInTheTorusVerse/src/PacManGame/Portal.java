@@ -1,6 +1,6 @@
 
 package src.PacManGame;
-
+import ch.aplu.jgamegrid.Location;
 
 public class Portal extends Obstacle {
     private PortalType portalType;
@@ -19,7 +19,7 @@ public class Portal extends Obstacle {
         this.otherPortal = other;
     }
 
-    public Portal getOtherPortalLocation() {
-        return this.otherPortal;
+    public Location getOtherPortalLocation() {
+        return this.otherPortal.getLocation();
     }
 }

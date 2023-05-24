@@ -27,6 +27,7 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
   private static final String IMAGE_NAME = "pacpix.gif";
   private static final int NB_SPRITES = 4;
   private static final Sprite SPRITE = new Sprite(CAN_ROTATE, IMAGE_NAME, NB_SPRITES);
+  private boolean teleported = false;
 
   public PacActor() {
     super(SPRITE);
@@ -77,6 +78,7 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
     {
       setLocation(next);
       eatPill(next);
+      handlePortalCollision(next);
     }
   }
 
@@ -89,6 +91,8 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
     if (isAuto) {
       moveInAutoMode();
     }
+
+
 
     // Should we make up a new Log class that handles and redirects logging events to GameCallBack?
     //this is actually in the wrong place I believe as this is an error in our log file - Aryan
@@ -122,6 +126,7 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
         if (canMove(next)) {
           setLocation(next);
           eatPill(next);
+          handlePortalCollision(next);
         }
         break;
     }
@@ -197,6 +202,27 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
     else
       return true;
   }
+
+  private void handlePortalCollision(Location next) {
+    Actor portalActor = getGame().getOneActorAt(next, Portal.class);
+    if (portalActor != null && !teleported) {
+      teleported = true;
+      Portal portal = (Portal)portalActor;
+      Location loc = portal.getOtherPortalLocation();
+
+      setLocation(loc);
+      System.out.println("###DEBUG (line 212, PacActor)####"+"PacMan Teleported to "+loc);
+
+     return;
+    }
+    if (portalActor == null && teleported) {
+      teleported = false;
+    }
+
+    return;
+  }
+
+
   private void eatPill(Location location)
   {
     ArrayList<Actor> items = getGame().getActorsAt(location,Item.class);

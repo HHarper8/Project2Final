@@ -22,7 +22,7 @@ public class Monster extends GameActor {
 
   private Random randomiser = new Random(0);
   private int SECOND_TO_MILLISECONDS = 1000;
-
+  private boolean teleported = false;
 
 
   public Monster(Sprite sprite) {
@@ -71,14 +71,38 @@ public class Monster extends GameActor {
 
       walkApproach();
 
+
     if (getDirection() > 150 && getDirection() < 210)
       setHorzMirror(false);
     else
       setHorzMirror(true);
+
+    // teleportation
+
   }
 
+  protected void handlePortalCollision(Location next) {
+    Actor portalActor = getGame().getOneActorAt(next, Portal.class);
+    if (portalActor != null && !teleported) {
+      teleported = true;
+      Portal portal = (Portal)portalActor;
+      Location loc = portal.getOtherPortalLocation();
 
-  public void walkApproach() {return;}
+      setLocation(loc);
+      System.out.println("###DEBUG (line 212, PacActor)####"+"PacMan Teleported to "+loc);
+
+      return;
+    }
+    if (portalActor == null && teleported) {
+      teleported = false;
+    }
+
+    return;
+  }
+
+  public void walkApproach() {
+    return;
+  }
 
 
   public String getType() {
