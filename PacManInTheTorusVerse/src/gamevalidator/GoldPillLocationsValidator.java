@@ -30,7 +30,7 @@ public class GoldPillLocationsValidator extends Check {
         System.out.println("###DEBUG (line 30, GPLValidator)### paclocation is: "+ pacLocations);
         Point spawn = pacLocations.get(0);
 
-        // Push 4 adjacent moves on to stack if not a wall or portal
+        // Push 4 adjacent moves on to stack if not a wall or portal, store all moves which are reachable from pacman
         List<Point> validMoves = new ArrayList<>();
         List<Point> stack = new ArrayList<>();
         stack.add(0, spawn);
@@ -48,7 +48,7 @@ public class GoldPillLocationsValidator extends Check {
 
             // Add point to stack if within bounds and not a wall
             for (Point point: points) {
-                if ((point.x >= 1 && point.y <= width) && (point.y >= 1 && point.y <= height) &&
+                if ((point.x >= 1 && point.x <= width) && (point.y >= 1 && point.y <= height) &&
                         !wallLocations.contains(point)) {
 
                     // If portal, add point of exit if we havnt already tried it
