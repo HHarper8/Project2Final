@@ -77,7 +77,7 @@ public class View {
 
 		JButton editButton = new JButton("Test Game");
 		editButton.addActionListener(controller);
-		loadButton.setActionCommand("test");
+		editButton.setActionCommand("test");
 
 		JPanel right = new JPanel();
 		right.setLayout(new BoxLayout(right, BoxLayout.Y_AXIS));
@@ -86,6 +86,7 @@ public class View {
 		// right.add(showGridButton);
 		right.add(saveButton);
 		right.add(loadButton);
+		right.add(editButton);
 
 		/** The top panel, that shows coordinates and stuff. */
 		CameraInformationLabel cameraInformationLabel = new CameraInformationLabel(

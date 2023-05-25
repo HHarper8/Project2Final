@@ -35,7 +35,13 @@ public class LevelLoader {
         }
 
         // For each file in game folder, check validity and return level folder if invalid, otherwise read into properties
-        List<File> levels = Arrays.asList(gameFile.listFiles());
+        List<File> levels = null;
+        if (gameFile.isDirectory()) {
+            levels = Arrays.asList(gameFile.listFiles());
+        }
+        else {
+            levels = Arrays.asList(gameFile);
+        }
         CheckerStrategy levelChecker = CheckerStrategyFactory.getInstance().getCheckerStrategy(levels.get(0));
 
         for (File level: levels) {

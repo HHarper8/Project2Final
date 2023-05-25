@@ -1,5 +1,6 @@
 package src.mapeditor.editor;
 
+import src.PacManGame.GameDriver;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -82,6 +83,9 @@ public class Controller implements ActionListener, GUIInformation {
 			loadFile();
 		} else if (e.getActionCommand().equals("update")) {
 			updateGrid(gridWith, gridHeight);
+		} else if (e.getActionCommand().equals("test")) {
+			File file = saveFile();
+			new GameDriver().runGame(file);
 		}
 	}
 
@@ -109,7 +113,7 @@ public class Controller implements ActionListener, GUIInformation {
 		}
 	};
 
-	private void saveFile() {
+	private File saveFile() {
 
 		JFileChooser chooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -171,12 +175,14 @@ public class Controller implements ActionListener, GUIInformation {
 				xmlOutput.setFormat(Format.getPrettyFormat());
 				xmlOutput
 						.output(doc, new FileWriter(chooser.getSelectedFile()));
+				return chooser.getSelectedFile();
 			}
 		} catch (FileNotFoundException e1) {
 			JOptionPane.showMessageDialog(null, "Invalid file!", "error",
 					JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 		}
+		return null;
 	}
 
 	public void loadOneFile(File fileToBeRead) {
