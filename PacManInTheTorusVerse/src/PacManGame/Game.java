@@ -165,6 +165,24 @@ public class Game extends GameGrid
     return locations;
   }
 
+
+  /**
+   * Gets all locations of portals
+   * @return Location ArrayList: locations of portals
+   */
+
+  public ArrayList<Location> getPortalLocations() {
+    ArrayList<Actor> portals = getActors(Portal.class);
+    ArrayList<Location> locations= new ArrayList<Location>();
+    Location location;
+
+    for (Actor item: portals) {
+      location = item.getLocation();
+      locations.add(location);
+    }
+    return locations;
+  }
+
   /**
    * Finds and returns all gold locations
    * @return ArrayList of gold locations
