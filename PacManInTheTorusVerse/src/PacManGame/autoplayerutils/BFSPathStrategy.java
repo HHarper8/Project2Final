@@ -96,7 +96,7 @@ public class BFSPathStrategy implements IPathStrategy {
                 visitedChild = false;
                 for(LocationNode visited: visitedLocations) {
                     if ((visited.getLocation().x == possibleNext.x) && (visited.getLocation().y == possibleNext.y)) {
-                        System.out.println("THE OTHER PORTAL'S LOCATION IS VISITED");
+
                         visitedChild = true;
                         break;
                     }

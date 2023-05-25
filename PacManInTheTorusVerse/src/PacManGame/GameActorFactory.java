@@ -67,7 +67,7 @@ public class GameActorFactory
     Location actorLocation;
     String rawLocationString = getLocationString(name);
     if (rawLocationString != null && !rawLocationString.equals("")) {
-      System.out.println("###DEBUG (line 69, PacManGameGrid)### "+name+" is being added.");
+
       String[] locations = rawLocationString.split(";");
 
 
@@ -86,7 +86,7 @@ public class GameActorFactory
           //out of the board
         }
         actorLocation = new Location(x, y);
-        System.out.println("###DEBUG (line 87, PacManGameGrid)### "+actorLocation+" is being added.");
+
         portalPair[i]=(Portal) spawnActor(name, actorLocation);
 
       }
