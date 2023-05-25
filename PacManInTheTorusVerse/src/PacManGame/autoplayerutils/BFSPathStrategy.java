@@ -69,12 +69,12 @@ public class BFSPathStrategy implements IPathStrategy {
             // if the location is a portal, look at the otherPortal
             boolean visitedOtherPortal = false;
             if (thisPortal != null) {
-                System.out.println("THIS LOCATION IS AN UNVISITED PORTAL");
+
                 otherPortalLocation = thisPortal.getOtherPortalLocation();
 
                 for(LocationNode visited: visitedLocations) {
                     if ((visited.getLocation().x == otherPortalLocation.x) && (visited.getLocation().y == otherPortalLocation.y)) {
-                        System.out.println("THE OTHER PORTAL'S LOCATION IS VISITED");
+
                         visitedOtherPortal = true;
                         break;
                     }

@@ -142,6 +142,13 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
     return locations;
   }
 
+  private void setDirection(Location oldLocation, Location newLocation) {
+    Location.CompassDirection dir = oldLocation.get4CompassDirectionTo(newLocation);
+
+    setDirection(dir);
+    return;
+  }
+
   // returns an ArrayList of possible next locations, given a specific location
   public ArrayList<Location> getPossibleNextLocationsAt(Location location) {
     Location north = location.getNeighbourLocation(Location.NORTH);
@@ -164,7 +171,7 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
   private void moveInAutoMode() {
     ArrayList<Location> path = pathStrat.findPathToTarget(this);
     Location next = path.remove(path.size()-1);
-
+    setDirection(this.getLocation(), next);
     setLocation(next);
     eatPill(next);
     addVisitedList(next);
@@ -205,7 +212,7 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
       Location loc = portal.getOtherPortalLocation();
 
       setLocation(loc);
-      System.out.println("###DEBUG (line 212, PacActor)####"+"PacMan Teleported to "+loc);
+
 
      return;
     }
