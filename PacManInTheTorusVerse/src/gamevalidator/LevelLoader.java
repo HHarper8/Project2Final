@@ -86,6 +86,8 @@ public class LevelLoader {
         levelProperties.setProperty("DarkGrayPortal.location", locationToProperties(level.getPortalDarkGrayLocations()));
         levelProperties.setProperty("DarkGoldPortal.location", locationToProperties(level.getPortalDarkGoldLocations()));
 
+        levelProperties.setProperty("PacMan.isAuto", "true");
+
         return levelProperties;
     }
 

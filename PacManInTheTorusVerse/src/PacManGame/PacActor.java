@@ -3,9 +3,13 @@
 
 package src.PacManGame;
 
-import ch.aplu.jgamegrid.*;
-import java.awt.event.KeyEvent;
+import ch.aplu.jgamegrid.Actor;
+import ch.aplu.jgamegrid.GGKeyRepeatListener;
+import ch.aplu.jgamegrid.Location;
+import src.PacManGame.autoplayerutils.BFSPathStrategy;
+import src.PacManGame.autoplayerutils.IPathStrategy;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,10 +32,13 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
   private static final int NB_SPRITES = 4;
   private static final Sprite SPRITE = new Sprite(CAN_ROTATE, IMAGE_NAME, NB_SPRITES);
   private boolean teleported = false;
+  private IPathStrategy pathStrat = new BFSPathStrategy();
+
 
   public PacActor() {
     super(SPRITE);
     this.setCurrentName("PacMan");
+
   }
   private boolean isAuto = false;
   public void setAuto(boolean auto) {
@@ -112,75 +119,60 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
     }
     return currentLocation;
   }
-  private void followPropertyMoves() {
-    String currentMove = propertyMoves.get(propertyMoveIndex);
-    switch(currentMove) {
-      case "R":
-        turn(90);
-        break;
-      case "L":
-        turn(-90);
-        break;
-      case "M":
-        Location next = getNextMoveLocation();
-        if (canMove(next)) {
-          setLocation(next);
-          eatPill(next);
-          handlePortalCollision(next);
-        }
-        break;
-    }
-    propertyMoveIndex++;
+
+  public Location findTargetLocation() {
+    return closestPillLocation();
   }
+
+  // returns an ArrayList of possible next locations
+  public ArrayList<Location> getPossibleNextLocations() {
+    Location north = getLocation().getNeighbourLocation(Location.NORTH);
+    Location south = getLocation().getNeighbourLocation(Location.SOUTH);
+    Location east = getLocation().getNeighbourLocation(Location.EAST);
+    Location west = getLocation().getNeighbourLocation(Location.WEST);
+
+    ArrayList<Location> locations = new ArrayList<Location>();
+    locations.add(north);
+    locations.add(south);
+    locations.add(east);
+    locations.add(west);
+
+    locations.removeIf(possible -> !this.canMove(possible));
+
+    return locations;
+  }
+
+  // returns an ArrayList of possible next locations, given a specific location
+  public ArrayList<Location> getPossibleNextLocationsAt(Location location) {
+    Location north = location.getNeighbourLocation(Location.NORTH);
+    Location south = location.getNeighbourLocation(Location.SOUTH);
+    Location east = location.getNeighbourLocation(Location.EAST);
+    Location west = location.getNeighbourLocation(Location.WEST);
+
+    ArrayList<Location> locations = new ArrayList<Location>();
+    locations.add(north);
+    locations.add(south);
+    locations.add(east);
+    locations.add(west);
+
+    locations.removeIf(possible -> !this.canMove(possible));
+
+    return locations;
+  }
+
 
   private void moveInAutoMode() {
-    if (propertyMoves.size() > propertyMoveIndex) {
-      followPropertyMoves();
-      return;
-    }
-    Location closestPill = closestPillLocation();
-    double oldDirection = getDirection();
+    ArrayList<Location> path = pathStrat.findPathToTarget(this);
+    Location next = path.remove(path.size()-1);
 
-    Location.CompassDirection compassDir =
-            getLocation().get4CompassDirectionTo(closestPill);
-    Location next = getLocation().getNeighbourLocation(compassDir);
-    setDirection(compassDir);
-    if (!isVisited(next) && canMove(next)) {
-      setLocation(next);
-    } else {
-      // normal movement
-      int sign = randomiser.nextDouble() < 0.5 ? 1 : -1;
-      setDirection(oldDirection);
-      turn(sign * 90);  // Try to turn left/right
-      next = getNextMoveLocation();
-      if (canMove(next)) {
-        setLocation(next);
-      } else {
-        setDirection(oldDirection);
-        next = getNextMoveLocation();
-
-
-        if (canMove(next)) // Try to move forward
-        {
-          setLocation(next);
-        } else {
-          setDirection(oldDirection);
-          turn(-sign * 90);  // Try to turn right/left
-          next = getNextMoveLocation();
-          if (canMove(next)) {
-            setLocation(next);
-          } else {
-            setDirection(oldDirection);
-            turn(180);  // Turn backward
-            next = getNextMoveLocation();
-            setLocation(next);
-          }
-        }
-      }
-    }
+    setLocation(next);
     eatPill(next);
     addVisitedList(next);
+    handlePortalCollision(next);
+    return;
   }
+
+
   private void addVisitedList(Location location)
   {
     visitedList.add(location);
