@@ -1,11 +1,13 @@
 package src.mapeditor.editor;
 
 import src.PacManGame.GameDriver;
+import src.gamevalidator.LevelSaveChecker;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
+import src.gamevalidator.LevelChecker;
 import src.mapeditor.grid.*;
 
 import javax.swing.*;
@@ -175,6 +177,8 @@ public class Controller implements ActionListener, GUIInformation {
 				xmlOutput.setFormat(Format.getPrettyFormat());
 				xmlOutput
 						.output(doc, new FileWriter(chooser.getSelectedFile()));
+
+				LevelSaveChecker.checkLevel(chooser.getSelectedFile());
 				return chooser.getSelectedFile();
 			}
 		} catch (FileNotFoundException e1) {
@@ -253,6 +257,7 @@ public class Controller implements ActionListener, GUIInformation {
 						}
 					}
 
+					LevelSaveChecker.checkLevel(fileToBeRead);
 					String mapString = model.getMapAsString();
 					grid.redrawGrid();
 
@@ -329,7 +334,7 @@ public class Controller implements ActionListener, GUIInformation {
 							model.setTile(x, y, tileNr);
 						}
 					}
-
+					LevelSaveChecker.checkLevel(chooser.getSelectedFile());
 					String mapString = model.getMapAsString();
 					grid.redrawGrid();
 				}
