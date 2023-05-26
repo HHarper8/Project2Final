@@ -7,7 +7,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.util.List;
 
-
+//958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
+//1270676 Aryan Puri (aryanp@student.unimelb.edu.au)
+//1272792 Henry Harper (hsharper@student.unimelb.edu.au)
 /**
  * The view of the application.
  * 

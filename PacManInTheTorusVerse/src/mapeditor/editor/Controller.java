@@ -1,6 +1,10 @@
 package src.mapeditor.editor;
 
-import src.PacApp.GameController;
+//958908 Kai Yao Tan (tankk@student.unimelb.edu.au)
+//1270676 Aryan Puri (aryanp@student.unimelb.edu.au)
+//1272792 Henry Harper (hsharper@student.unimelb.edu.au)
+
+
 import src.PacManGame.GameDriver;
 import src.gamevalidator.LevelSaveChecker;
 
@@ -9,7 +13,7 @@ import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
-import src.gamevalidator.LevelChecker;
+
 import src.mapeditor.grid.*;
 
 import javax.swing.*;
