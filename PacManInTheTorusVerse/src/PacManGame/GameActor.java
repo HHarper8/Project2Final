@@ -31,11 +31,4 @@ public class GameActor extends Actor {
     // gets the GameGrid in the Actor class
     public Game getGame() {return (Game) this.gameGrid;}
 
-    // String representation of our Multiverse Actor
-    @Override
-    public String toString() {
-        return "MultiverseActor{" +
-                "currentName='" + currentName + '\'' +
-                ",location=" + getLocation()+"}";
-    }
 }
