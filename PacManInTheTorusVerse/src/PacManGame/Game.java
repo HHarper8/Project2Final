@@ -85,12 +85,14 @@ public class Game extends GameGrid
     addKeyRepeatListener(pacActor);
     setKeyRepeatPeriod(150);
 
-    for(Monster monster: Monsters){
+    if (!Monsters.isEmpty()) {
+      for (Monster monster : Monsters) {
         monster.setSeed(seed);
         monster.setSlowDown(3);
-        if(monster instanceof TX5){
+        if (monster instanceof TX5) {
           monster.stopMoving(5);
         }
+      }
     }
 
 

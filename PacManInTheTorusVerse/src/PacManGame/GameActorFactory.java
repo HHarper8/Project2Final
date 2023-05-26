@@ -115,6 +115,11 @@ public class GameActorFactory
    */
   private GameActor spawnActor(String name, Location location) {
     GameActor actor = null;
+
+    if (location == null) {
+      return null;
+    }
+
     if (name.equals("PacMan")) {
       actor = new PacActor();
       game.setPacActor((PacActor) actor);
@@ -163,7 +168,7 @@ public class GameActorFactory
   private void readActorsToGame(String name) {
     Location actorLocation;
     String rawLocationString = getLocationString(name);
-    if (rawLocationString != null) {
+    if (rawLocationString != null && rawLocationString != "") {
       String[] locations = rawLocationString.split(";");
       for (String locationString: locations) {
         String[] location = locationString.split(",");

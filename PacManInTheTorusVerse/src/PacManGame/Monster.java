@@ -89,7 +89,7 @@ public class Monster extends GameActor {
       Location loc = portal.getOtherPortalLocation();
 
       setLocation(loc);
-      System.out.println("###DEBUG (line 212, PacActor)####"+"PacMan Teleported to "+loc);
+
 
       return;
     }
