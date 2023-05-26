@@ -2,7 +2,7 @@
 package src.PacManGame;
 import ch.aplu.jgamegrid.Location;
 
-public class Portal extends Obstacle {
+public class Portal extends GameActor {
     private PortalType portalType;
     private static final String OBSTACLE_NAME = "Portal";
     private Portal otherPortal;
