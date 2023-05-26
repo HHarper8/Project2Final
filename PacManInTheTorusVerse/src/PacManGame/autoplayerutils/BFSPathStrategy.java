@@ -82,7 +82,26 @@ public class BFSPathStrategy implements IPathStrategy {
 
                 // if we haven't visited the otherPortal then we use this other location as the root node instead
                 if (!visitedOtherPortal) {
-                    LocationNode parent = node.getParent();
+                    ArrayList<Location> possibleNextLocations = pacActor.getPossibleNextLocationsAt(node.getLocation());
+                    boolean visitedChild = false;
+                    for (Location possibleNext: possibleNextLocations) {
+                        // if child is visited, then don't add to the queue
+                        visitedChild = false;
+                        for(LocationNode visited: visitedLocations) {
+                            if ((visited.getLocation().x == possibleNext.x) && (visited.getLocation().y == possibleNext.y)) {
+
+                                visitedChild = true;
+                                break;
+                            }
+                        }
+
+                        // based on whether child was visited, determining whether to make a new node
+                        if (!visitedChild) {
+                            LocationNode newNode = new LocationNode(possibleNext, node);
+                            queue.add(newNode);
+                        }
+                    }
+
                     node = new LocationNode(otherPortalLocation, node.getParent());
                     visitedLocations.add(node);
                 }
