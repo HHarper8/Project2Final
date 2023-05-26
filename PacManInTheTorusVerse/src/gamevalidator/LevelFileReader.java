@@ -40,7 +40,6 @@ public class LevelFileReader {
 
         // Save filename
         fileName = file.getName();
-        System.out.println("###DEBUG (line 43, LevelFileReader)### The file being read is: " + fileName);
 
         // Read all objects from xml file
         try {
@@ -72,7 +71,7 @@ public class LevelFileReader {
 
                         if (cellElem.getTextContent().equals("PacTile")) {
                             pacLocations.add(coord);
-                            System.out.println("###DEBUG (line 82, LFR)### PacTile coords: " + coord);
+
                         }
                         else if (cellElem.getTextContent().equals("PathTile")) {
                             pathLocations.add(coord);

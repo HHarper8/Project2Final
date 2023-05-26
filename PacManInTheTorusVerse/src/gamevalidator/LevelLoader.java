@@ -47,13 +47,13 @@ public class LevelLoader {
         for (File level: levels) {
             if (!levelChecker.checkValidity(level)) {
                 foundFirstInvalidLevel = true;
-                System.out.println("###DEBUG (line 41, LevelLoader)### level not valid");
+
 
                 return level;
             }
             else {
                 Properties levelProperties = createProperties(level);
-                System.out.println("###DEBUG (line 45, LevelLoader)### adding a level");
+
                 allLevels.add(numLevels, levelProperties);
                 numLevels++;
                 if (!foundFirstInvalidLevel) {
@@ -101,9 +101,8 @@ public class LevelLoader {
 
         String output = "";
         for (Point point: locations) {
-            // x and y are being swapped such that PacManGameGrid works
 
-            // TODO: CONFIRM WITH GROUP
+
             int new_x = point.x-1;
             int new_y = point.y-1;
             output = output +  new_x + "," + new_y + ";";

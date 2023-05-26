@@ -170,8 +170,10 @@ public class PacActor extends GameActor implements GGKeyRepeatListener {
 
   private void moveInAutoMode() {
     ArrayList<Location> path = pathStrat.findPathToTarget(this);
+
     Location next = path.remove(path.size()-1);
     setDirection(this.getLocation(), next);
+
     setLocation(next);
     eatPill(next);
     addVisitedList(next);
