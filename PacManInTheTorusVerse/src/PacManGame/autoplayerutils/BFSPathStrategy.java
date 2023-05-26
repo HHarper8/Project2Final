@@ -117,7 +117,4 @@ public class BFSPathStrategy implements IPathStrategy {
         System.out.println("###DEBUG (line 117, BFSPathStrategy)###, cannot find path when at:"+pacActor.getLocation());
         return null;
     }
-
-
-
 }
