@@ -88,6 +88,7 @@ public class View {
 		right.add(loadButton);
 		right.add(editButton);
 
+
 		/** The top panel, that shows coordinates and stuff. */
 		CameraInformationLabel cameraInformationLabel = new CameraInformationLabel(
 				camera);

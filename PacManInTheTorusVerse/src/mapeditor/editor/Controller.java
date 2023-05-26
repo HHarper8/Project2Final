@@ -1,7 +1,9 @@
 package src.mapeditor.editor;
 
+import src.PacApp.GameController;
 import src.PacManGame.GameDriver;
 import src.gamevalidator.LevelSaveChecker;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -87,7 +89,11 @@ public class Controller implements ActionListener, GUIInformation {
 			updateGrid(gridWith, gridHeight);
 		} else if (e.getActionCommand().equals("test")) {
 			File file = saveFile();
-			new GameDriver().runGame(file);
+			view.close();
+			GameDriver gd = new GameDriver();
+			gd.runGame(file);
+
+
 		}
 	}
 
