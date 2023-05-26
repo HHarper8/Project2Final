@@ -58,8 +58,6 @@ public class BFSPathStrategy implements IPathStrategy {
                     results.add(curr.getLocation());
                     curr = curr.getParent();
                 }
-
-                System.out.println(results);
                 return results;
             }
 
@@ -132,8 +130,7 @@ public class BFSPathStrategy implements IPathStrategy {
 
         }
 
-        // CANNOT FIND A SOLUTION
-        System.out.println("###DEBUG (line 117, BFSPathStrategy)###, cannot find path when at:"+pacActor.getLocation());
+
         return null;
     }
 }
