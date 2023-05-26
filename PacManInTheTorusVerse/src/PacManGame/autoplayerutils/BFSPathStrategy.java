@@ -52,14 +52,14 @@ public class BFSPathStrategy implements IPathStrategy {
             if (target.equals(node.getLocation())) {
                 // yes so find the very next location that led to this step
                 LocationNode curr = node;
-                results.add(curr.getLocation());
+
 
                 while(curr.getParent() != null) {
                     results.add(curr.getLocation());
                     curr = curr.getParent();
                 }
 
-
+                System.out.println(results);
                 return results;
             }
 
@@ -84,6 +84,7 @@ public class BFSPathStrategy implements IPathStrategy {
                 if (!visitedOtherPortal) {
                     LocationNode parent = node.getParent();
                     node = new LocationNode(otherPortalLocation, node.getParent());
+                    visitedLocations.add(node);
                 }
 
             }
@@ -113,6 +114,7 @@ public class BFSPathStrategy implements IPathStrategy {
         }
 
         // CANNOT FIND A SOLUTION
+        System.out.println("###DEBUG (line 117, BFSPathStrategy)###, cannot find path when at:"+pacActor.getLocation());
         return null;
     }
 

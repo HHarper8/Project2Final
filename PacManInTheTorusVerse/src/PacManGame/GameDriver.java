@@ -35,6 +35,9 @@ public class GameDriver {
 
 
             Game game = new Game(gameCallback, currLevel);
+            if(!game.isGameWon()) {
+                break;
+            }
             currLevel = loader.getNextLevel();
             levelCounter++;
         }

@@ -152,10 +152,10 @@
     <cell>WallTile</cell>
     <cell>WallTile</cell>
     <cell>WallTile</cell>
-    <cell>WallTile</cell>
+    <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>WallTile</cell>
-    <cell>WallTile</cell>
+    <cell>PathTile</cell>
     <cell>WallTile</cell>
   </row>
   <row>
@@ -172,13 +172,13 @@
     <cell>WallTile</cell>
     <cell>PathTile</cell>
     <cell>WallTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
+    <cell>TX5Tile</cell>
+    <cell>WallTile</cell>
+    <cell>WallTile</cell>
     <cell>WallTile</cell>
     <cell>WallTile</cell>
     <cell>PathTile</cell>
+    <cell>WallTile</cell>
   </row>
   <row>
     <cell>WallTile</cell>
@@ -193,36 +193,36 @@
     <cell>WallTile</cell>
     <cell>PathTile</cell>
     <cell>PathTile</cell>
+    <cell>WallTile</cell>
+    <cell>PathTile</cell>
+    <cell>WallTile</cell>
     <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>PathTile</cell>
-    <cell>TX5Tile</cell>
     <cell>PathTile</cell>
+    <cell>WallTile</cell>
+  </row>
+  <row>
+    <cell>WallTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>PathTile</cell>
+    <cell>WallTile</cell>
+    <cell>WallTile</cell>
     <cell>TrollTile</cell>
-    <cell>WallTile</cell>
-    <cell>PathTile</cell>
-  </row>
-  <row>
-    <cell>WallTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>WallTile</cell>
-    <cell>WallTile</cell>
-    <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>PathTile</cell>
     <cell>WallTile</cell>
-    <cell>WallTile</cell>
-    <cell>WallTile</cell>
-    <cell>PathTile</cell>
   </row>
   <row>
     <cell>WallTile</cell>
@@ -242,9 +242,9 @@
     <cell>WallTile</cell>
     <cell>WallTile</cell>
     <cell>WallTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
-    <cell>PathTile</cell>
+    <cell>WallTile</cell>
+    <cell>WallTile</cell>
+    <cell>WallTile</cell>
   </row>
 </level>
 
